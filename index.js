@@ -24,12 +24,7 @@ const ManagerQuestions = [
         name: 'officeNumber',
         message: 'What is your office number?',
     },
-    {
-        type: 'list',
-        name: 'addMoreEmployees',
-        message: "Would you like to add more to your list?",
-        choices: ["Engineer", "Intern", "I'm done"]
-    },
+    
 
 ];
 
@@ -54,13 +49,7 @@ const EngineerQuestions = [
         name: 'github',
         message: 'What is your GitHub Username?',
     },
-    {
-        type: 'list',
-        name: 'addMoreEmployees',
-        message: "Would you like to add more to your list?",
-        choices: ["Engineer", "Intern", "I'm done"]
-    },
-
+    
 ];
 
 const InternQuestions = [
@@ -84,13 +73,16 @@ const InternQuestions = [
         name: 'school',
         message: 'What is the interns school?',
     },
+   
+
+];
+const addMoreQuestions = [
     {
         type: 'list',
         name: 'addMoreEmployees',
         message: "Would you like to add more to your list?",
         choices: ["Engineer", "Intern", "I'm done"]
     },
-
 ];
 
 let Engineers = [];
