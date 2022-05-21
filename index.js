@@ -101,6 +101,9 @@ function init() {
         console.log(manager)
         if (responses.addMoreEmployees === "Engineer") {
             inquirer.prompt(EngineerQuestions).then((responses)=>{
+                let engineer = new Engineer(responses.engineerName, responses.employeeId, responses.email, responses.github)
+                Engineers.push(engineer)
+                console.log(Engineers)
 
             })
         
