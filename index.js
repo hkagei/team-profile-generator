@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager');
 
-const questions = [
+const ManagerQuestions = [
     {
         type: 'input',
         name: 'manager name',
@@ -29,4 +29,13 @@ const questions = [
         choices: ["Engineer", "Intern", "I'm done"]
     },
 
-]
+];
+
+function init() {
+    inquirer.prompt(ManagerQuestions).then((responses)=>{
+        console.log(responses)
+        let manager = new Manager()
+
+    })
+}
+init();
