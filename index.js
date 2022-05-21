@@ -87,11 +87,15 @@ const addMoreQuestions = [
 
 let Engineers = [];
 let Interns = [];
+let keepAsking = true;
+
 function init() {
     inquirer.prompt(ManagerQuestions).then((responses)=>{
         //console.log(responses)
         let manager = new Manager(responses.managerName, responses.employeeId, responses.email, responses.officeNumber)
         console.log(manager)
+        do { 
+            inquirer.prompt(addMoreQuestions).then((responses) => {
         if (responses.addMoreEmployees === "Engineer") {
             inquirer.prompt(EngineerQuestions).then((responses)=>{
                 let engineer = new Engineer(responses.engineerName, responses.employeeId, responses.email, responses.github)
@@ -107,8 +111,18 @@ function init() {
                 console.log(Interns)
             
         })
+    } else {
+        keepAsking = false;
     }
+})
+} while (keepAsking === true);
     })
 
 }
 init();
+
+//  do {
+//     inquirer.prompt(addMoreQuestions).then((response) => {
+
+//     });
+// } while (keepAsking === true);
