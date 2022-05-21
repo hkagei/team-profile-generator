@@ -94,6 +94,7 @@ const InternQuestions = [
 ];
 
 let Engineers = [];
+let Interns = [];
 function init() {
     inquirer.prompt(ManagerQuestions).then((responses)=>{
         //console.log(responses)
@@ -107,10 +108,15 @@ function init() {
 
             })
         
-        }
-      
-
-
+        } else if (responses.addMoreEmployees === "Intern") {
+            inquirer.prompt(InternQuestions).then((responses)=>{
+                let intern = new Intern(responses.internName, responses.employeeId, responses.email, responses.school)
+                Interns.push(intern)
+                console.log(Interns)
+            
+        })
+    }
     })
+
 }
 init();
