@@ -1,17 +1,18 @@
-const Employee = require('../lib/Employee');
+const Intern = require('../lib/Intern');
 
-test ('', () => {
-    
+test ('creates an Intern object', () => {
+    const intern = new Intern('Hiro', 19921022, 'k_dawg_1022@hotmail.com', 'UofU');
+
+        
 })
 
-test ('', () => {
-    
+test ('gets school name', () => {
+
 })
 
-test ('', () => {
-    
-})
+test ('gets role of employee', () => {
+    const intern = new Intern('Hiro', 19921022, 'k_dawg_1022@hotmail.com');
 
-test ('', () => {
+    expect(intern.getRole()).toEqual("Intern");
     
 })

@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTML = require('./utils/generateHTML')
 
 const ManagerQuestions = [
     {
@@ -89,40 +90,47 @@ let Engineers = [];
 let Interns = [];
 let keepAsking = true;
 
+function addNewEngineer() {
+    inquirer.prompt(EngineerQuestions).then((responses)=>{
+        let engineer = new Engineer(responses.engineerName, responses.employeeId, responses.email, responses.github)
+        Engineers.push(engineer)
+        console.log(Engineers)
+        addNewEmployee();
+
+    })
+}
+function addNewIntern() {
+    inquirer.prompt(InternQuestions).then((responses)=>{
+        let intern = new Intern(responses.internName, responses.employeeId, responses.email, responses.school)
+        Interns.push(intern)
+        console.log(Interns)
+        addNewEmployee();
+    
+})
+
+}
+function addNewEmployee() {
+    inquirer.prompt(addMoreQuestions).then((responses) => {
+        if (responses.addMoreEmployees === "Engineer") {
+            addNewEngineer();
+        
+        } else if (responses.addMoreEmployees === "Intern") {
+            addNewIntern();
+    } else {
+        
+    }
+})
+
+}
 function init() {
     inquirer.prompt(ManagerQuestions).then((responses)=>{
         //console.log(responses)
         let manager = new Manager(responses.managerName, responses.employeeId, responses.email, responses.officeNumber)
         console.log(manager)
-        do { 
-            inquirer.prompt(addMoreQuestions).then((responses) => {
-        if (responses.addMoreEmployees === "Engineer") {
-            inquirer.prompt(EngineerQuestions).then((responses)=>{
-                let engineer = new Engineer(responses.engineerName, responses.employeeId, responses.email, responses.github)
-                Engineers.push(engineer)
-                console.log(Engineers)
-
-            })
+        addNewEmployee();
         
-        } else if (responses.addMoreEmployees === "Intern") {
-            inquirer.prompt(InternQuestions).then((responses)=>{
-                let intern = new Intern(responses.internName, responses.employeeId, responses.email, responses.school)
-                Interns.push(intern)
-                console.log(Interns)
-            
-        })
-    } else {
-        keepAsking = false;
-    }
-})
-} while (keepAsking === true);
+           
     })
 
 }
 init();
-
-//  do {
-//     inquirer.prompt(addMoreQuestions).then((response) => {
-
-//     });
-// } while (keepAsking === true);
