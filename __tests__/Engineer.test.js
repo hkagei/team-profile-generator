@@ -6,8 +6,10 @@ test ('creates an engineer object', () => {
     expect(engineer.github).toEqual(expect.any(String));
 })
 
-test ('', () => {
-    
+test ('gets engineer github value', () => {
+    const engineer = new Engineer('Hiro', 19921022, 'k_dawg_1022@hotmail.com', 'hkagei');
+
+    expect(engineer.getGithub()).toEqual(expect.stringContaining(engineer.github.toString()));
 })
 
 test ('gets role of employee', () => {
