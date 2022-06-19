@@ -15,32 +15,32 @@ const clientTeam = (team) => {
                     <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
                     <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
                 </ul>
+                </div>
             </div>
         </div>
-    </div>
         `;
     // ${manager.managerId}
   };
   const clientEngineer = (engineer) => {
     return `
     <div class="col-4 mt-4">
-    <div class="card h-100">
-            <div class="card-header">
-                <h2 class="card-title">${engineer.getName()}</h2>
-                <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
-            </div>
-            
-            <div class="card-body">
+        <div class="card h-100">
+                <div class="card-header">
+                    <h2 class="card-title">${engineer.getName()}</h2>
+                    <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+                </div>
                 
-                <ul class="list-group">
-                    <li class="list-group-item">ID: ${engineer.getId()}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                    <li class="list-group-item">GitHub ID: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
-                </ul>
+                <div class="card-body">
+                    
+                    <ul class="list-group">
+                        <li class="list-group-item">ID: ${engineer.getId()}</li>
+                        <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                        <li class="list-group-item">GitHub ID: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+                    </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-        `;
+        `
     // ${engineer.engineerId}
   };
 
@@ -49,23 +49,22 @@ const clientTeam = (team) => {
         
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card employee-card">
-            <div class="card-header">
-                <h2 class="card-title">${intern.getName()}</h2>
-                <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
-            </div>
+                <div class="card-header">
+                    <h2 class="card-title">${intern.getName()}</h2>
+                    <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
+                </div>
             
-            <div class="card-body">
+                <div class="card-body">
                 
-                <ul class="list-group">
-                    <li class="list-group-item">ID: ${intern.getId()}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-                    <li class="list-group-item">School: ${intern.getSchool()}</li>
-                </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">ID: ${intern.getId()}</li>
+                        <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                        <li class="list-group-item">School: ${intern.getSchool()}</li>
+                    </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-        `;
+        `
     // ${intern.internId}
   };
 
@@ -106,7 +105,7 @@ module.exports = (team) => {
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>

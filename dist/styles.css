@@ -8,12 +8,13 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Tahoma, sans-serif;
+    font-size: 15px;
 }
 
 #navbar {
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: red;
+    color: white;
     font-size: 50px;
 }
 
@@ -23,13 +24,13 @@ body {
 
 
 .card-header {
-    background-color: var(--primary);
+    background-color: blue;
     color: var(--secondary);
 }
 
 .card-body {
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: lightblue;
+    color: black;
 }
 
 .container {
